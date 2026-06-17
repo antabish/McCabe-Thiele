@@ -5,10 +5,11 @@ Example 7.1 from:
   Seader, J.D., Henley, E.J., & Roper, D.K.
   Separation Process Principles, 3rd Edition
 
-Generates three publication-quality figures:
+Generates four publication-quality figures:
   Figure A — Minimum stages at total reflux
   Figure B — Minimum reflux condition (pinch point)
-  Figure C — Actual operating design with stage stepping
+  Figure C — Building the McCabe-Thiele design framework
+  Figure D — Actual operating design with stage stepping
 
 Exports: PNG (600 dpi), SVG, and CSV of stage coordinates for PowerPoint.
 
@@ -301,7 +302,7 @@ def _make_axes(title: str) -> tuple[plt.Figure, plt.Axes]:
     ax.set_xlabel("Liquid mole fraction of benzene,  $x$", fontsize=16)
     ax.set_ylabel("Vapour mole fraction of benzene,  $y$", fontsize=16)
     """ax.set_title(title, fontsize=15, fontweight="bold", pad=12)"""
-    ax.tick_params(labelsize=12)
+    ax.tick_params(labelsize=14)
 
     return fig, ax
 
@@ -331,7 +332,7 @@ def _draw_steps(ax: plt.Axes, segs: Segments,
         if number_stages and i % 2 == 0:
             stage_num = i // 2 + 1
             ax.text(x2 + 0.010, y2 + 0.012, str(stage_num),
-                    fontsize=14, color=C["stages"], fontweight="bold",
+                    fontsize=16, color=C["stages"],
                     va="bottom", ha="left")
 
 
